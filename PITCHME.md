@@ -563,7 +563,7 @@ export default {
 
 ---
 
-やりたいことに応じたloaderを選んで使っていけばok
+やりたいことに応じてloaderを選んで使えばok
 
 ---
 
@@ -593,7 +593,7 @@ module.exports = {
   ]
 };
 ```
-@[9-11](最終的な生成物が`UglifyJS`によって圧縮される)
+@[9-11](最終的な生成物が`UglifyJS`によって圧縮)
 
 ---
 
@@ -603,9 +603,9 @@ module.exports = {
 
 ### CommonsChunkPlugin
 
-一部のモジュールだけを別ファイル化できる  
+一部のモジュールだけを別ファイル化  
 ↓  
-Reactなどの共通モジュールだけで1ファイルとすることができる。
+Reactなど共通モジュールで1ファイルに
 
 - 各outputファイルの軽量化
 - キャッシュの効率化
@@ -615,9 +615,9 @@ Reactなどの共通モジュールだけで1ファイルとすることがで�
 ### EnvironmentPlugin
 
 `process.env.NODE_ENV`  
-などをビルド時点で置き換えてくれる。  
+などをビルド時点で置き換え  
 
-- `development`時のみデバッグログを出力したり
+例:`development`時のみデバッグログ出力
 
 ---
 
@@ -627,13 +627,13 @@ https://webpack.js.org/plugins/
 
 ---
 
-ちなみに、loaderもpluginも作ろうと思えば作れる
+loaderもpluginも作ろうと思えば作れる
 
-> (私はまだ作ったこと無い...)
+(私はまだ作ったこと無い...)
 
 ---
 
-これが基本になるけど、他にも設定は色々ある
+これが基本で、他にも設定は色々ある
 
 - resolve
 - externals
