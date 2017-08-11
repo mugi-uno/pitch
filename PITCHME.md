@@ -94,7 +94,7 @@ Javascript
 ### babel-core
 
 コア機能。  
-後述するpresetやpluginによって  
+後述するpresetやpluginに応じた  
 **シンタックスの変換**のみを行う。
 
 ```js
@@ -126,6 +126,10 @@ Object.assign(x, y);
 
 ---
 
+babel-coreを利用するモジュール例
+
+---
+
 ### babel-cli
 
 CLIからbabelによる変換を行うときに使う。
@@ -143,6 +147,77 @@ require("babel-register");
 
 # → .es6, .es, .jsx, .js をrequireすると変換される
 ```
+
+### babel-loader
+
+webpackから読み込むときに変換を行う。
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env']
+        }
+      }
+    }
+  ]
+}
+```
+
+---
+
+## Presets/Pluginsについて
+
+---
+
+ES6(7)→ES5変換で考える必要があること
+
+---
+
+「どこまでの機能をサポートするのか？」
+
+---
+
+ECMAScriptの各仕様にはstageという概念がある
+
+- 0: Strawman
+- 1: Proposal
+- 2: Draft
+- 3: Candidate
+- 4: Finished
+
+0はアイデアレベル。4で時期ECMAScriptへの追加。
+
+---
+
+babelでどこまでのものを変換したいのか？
+
+---
+
+### Presets
+
+Presetsを使いたいstageに応じて選んで使う。
+
+- babel-preset-stage-0
+- babel-preset-stage-1
+- babel-preset-stage-2
+- babel-preset-stage-3
+- babel-preset-env
+
+```
+babel script.js --presets=stage-2
+```
+
+---
+
+### Transform Plugins
+
+
 
 ---
 
