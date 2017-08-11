@@ -163,7 +163,7 @@ babel script.js --out-file script-compiled.js
 
 ### babel-register
 
-node.jsの `require` に時にフックして変換を行う
+node.jsの `require` 時に変換を行う
 
 ```
 require("babel-register");
