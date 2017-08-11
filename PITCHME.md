@@ -313,7 +313,7 @@ _.partition([1, 2, 3, 4], n => n % 2);
 
 ---
 
-単純な利用方法
+単純な利用方法(not webpack)
 
 ```html
 <script src="lodash.js"></script>
@@ -487,6 +487,33 @@ module.exports = {
 ---
 
 ### loader
+
+ファイルを読み込む際に何らかの変換を行う。
+
+---
+
+例 : 「ES6を使いたい！！」
+
+---
+
+![Logo](assets/babel.png)
+
+---
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader'
+    }
+  ]
+}
+```
+
+拡張子`.js`のファイルをロードした場合、  
+babelによる変換が行われる
 
 --- 
 
