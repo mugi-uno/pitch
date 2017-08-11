@@ -328,11 +328,35 @@ _.partition([1, 2, 3, 4], n => n % 2);
 var hoge = _.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 });
 ```
 
-→ `_` ってどこから出てきたんだ？ |
+---
+
+→ `_` ってどこから出てきたんだ？
 
 ---
 
+node.jsの場合
 
+
+```
+var _ = require('lodash');
+var hoge = _.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 });
+```
+
+---
+
+ブラウザでも同じように書きたい！！！
+
+---
+
+![Logo](assets/webpack.png)
+
+---
+
+## webpack
+
+`require`(CommonJS)での依存を解決  
+↓  
+ブラウザで実行可能なファイルとして出力する
 
 ---
 
