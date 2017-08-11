@@ -543,7 +543,7 @@ CoffeeScriptを変換する
 
 Vueの単一ファイルコンポーネントを変換する
 
-```vue
+```html
 <template>
 <div>
   {{text}}
