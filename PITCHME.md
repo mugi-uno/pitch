@@ -96,11 +96,11 @@ Javascript
 後述するpresetやpluginによって  
 **シンタックスの変換**のみを行う。
 
-```
+```js
 (x, y) => x + y;
 ```
 ↓
-```
+```js
 "use strict";
 
 (function (x, y) {
@@ -115,12 +115,32 @@ Javascript
 シンタックスの変換でサポートできないような、  
 グローバルライブラリや、新しいネイティブメソッドを使えるようにする。
 
-```
-Promise
+```js
+new Promise();
 ```
 
-```
+```js
 Object.assign(x, y);
+```
+
+---
+
+### babel-cli
+
+CLIからbabelによる変換を行うときに使う。
+
+```
+babel script.js --out-file script-compiled.js
+```
+
+### babel-register
+
+node.jsの `require` に時にフックして変換を行う。
+
+```
+require("babel-register");
+
+# → .es6, .es, .jsx, .js をrequireすると変換される
 ```
 
 ---
