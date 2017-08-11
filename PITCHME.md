@@ -113,9 +113,10 @@ babel多くね...?
 
 ### babel-core
 
-コア機能。  
+コア機能
+
 後述するpresetやpluginに応じた  
-**シンタックスの変換**のみを行う。
+**シンタックスの変換**のみを行う
 
 ```js
 (x, y) => x + y;
@@ -133,8 +134,9 @@ babel多くね...?
 
 ### babel-polyfill
 
-シンタックスの変換でサポートできないような、  
-グローバルライブラリや、新しいネイティブメソッドを使えるようにする。
+グローバルライブラリや、　　
+新しいネイティブメソッドを　　
+使えるようにする
 
 ```js
 new Promise();
@@ -152,7 +154,7 @@ babel-coreを利用するモジュール例
 
 ### babel-cli
 
-CLIからbabelによる変換を行うときに使う。
+CLIからbabelによる変換を行うときに使う
 
 ```
 babel script.js --out-file script-compiled.js
@@ -162,7 +164,7 @@ babel script.js --out-file script-compiled.js
 
 ### babel-register
 
-node.jsの `require` に時にフックして変換を行う。
+node.jsの `require` に時にフックして変換を行う
 
 ```
 require("babel-register");
@@ -174,7 +176,7 @@ require("babel-register");
 
 ### babel-loader
 
-webpackから読み込むときに変換を行う。
+webpackから読み込むときに変換を行う
 
 ```js
 module: {
@@ -215,7 +217,7 @@ ECMAScriptの各仕様にはstageという概念がある
 - 3: Candidate
 - 4: Finished
 
-0はアイデアレベル。4で時期ECMAScriptへの追加。
+0はアイデアレベル。4で時期ECMAScriptへの追加
 
 ---
 
@@ -225,8 +227,9 @@ babelでどこまでのものを変換したいのか？
 
 ### Presets
 
-変換ルールをひとまとめにしたもの。  
-Presetsを使いたいstageに応じて選んで使う。
+変換ルールをひとまとめにしたもの  
+↓  
+Presetsを使いたいstageに応じて選んで使う
 
 - babel-preset-stage-0
 - babel-preset-stage-1
@@ -241,7 +244,7 @@ babel script.js --presets=stage-2
 
 ---
 
-特殊な変換用Presetsも存在する。
+特殊な変換用Presetsも存在する
 
 - babel-preset-react
 - babel-preset-flow
@@ -272,8 +275,9 @@ babel script.js --presets=stage-2
 
 ---
 
-変換時に `.babelrc` というファイルがあると自動的にロードされる。  
-PresetsやPluginsの設定はここに書くことが多い。
+変換時に `.babelrc` があれば自動的にロードされる  
+↓  
+PresetsやPluginsの設定はここに書くことが多い
 
 ```
 {
@@ -385,7 +389,7 @@ html
 
 #### webpack.config.js
 
-実行時に存在していると自動的にロードされる。
+実行時に存在していると自動的にロードされる
 
 ```js
 const path = require('path');
@@ -445,8 +449,8 @@ entry1ファイル = 1ファイル出力される
 
 ### output
 
-entryのファイルを出力する際に、  
-どういった形式で出力するかを指定する。
+entryのファイルを出力する際に  
+どういった形式で出力するかを指定する
 
 ---
 
@@ -488,7 +492,7 @@ module.exports = {
 
 ### loader
 
-ファイルを読み込む際に何らかの変換を行う。
+ファイルを読み込む際に何らかの変換を行う
 
 ---
 
@@ -514,7 +518,7 @@ module: {
 }
 ```
 
-拡張子`.js`のファイルをロードした場合、  
+拡張子`.js`のファイルをロードした場合に   
 babelによる変換が行われる
 
 --- 
@@ -599,7 +603,8 @@ module.exports = {
 
 ### CommonsChunkPlugin
 
-一部のモジュールだけを別ファイル化できる。  
+一部のモジュールだけを別ファイル化できる  
+↓  
 Reactなどの共通モジュールだけで1ファイルとすることができる。
 
 - 各outputファイルの軽量化
@@ -609,9 +614,10 @@ Reactなどの共通モジュールだけで1ファイルとすることがで�
 
 ### EnvironmentPlugin
 
-`process.env.NODE_ENV` などをビルド時点で置き換えてくれる。  
+`process.env.NODE_ENV`  
+などをビルド時点で置き換えてくれる。  
 
-- `development`向けにビルドされた場合のみデバッグログを出力したり
+- `development`時のみデバッグログを出力したり
 
 ---
 
@@ -627,7 +633,7 @@ https://webpack.js.org/plugins/
 
 ---
 
-これが基本になるけど、他にも設定は色々ある。
+これが基本になるけど、他にも設定は色々ある
 
 - resolve
 - externals
