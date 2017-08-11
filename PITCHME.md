@@ -42,7 +42,6 @@ Javascript
 
 なんぞこれ・・・
 
-
 ---
 
 - React？え、jQueryじゃだめなの？
@@ -67,15 +66,25 @@ Javascript
 
 ---
 
-「JavaScriptはブラウザだけで出来るから初心者向けで
+今日は混乱しやすい2つについて
 
-# aaa
-## bbb
-### ccc
-#### ddd
-##### eee
+- babel
+- webpack
 
-hogehoge
+---
+
+# babel
+
+---
+
+〜基本〜
+
+- ES6(ES7)で書かれたコードをES5に変換
+- ECMAScriptの次世代機能をブラウザで使えるようにする
+
+---
+
+
 
 ---
 
