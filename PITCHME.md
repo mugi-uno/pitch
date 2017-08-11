@@ -83,6 +83,26 @@ Javascript
 - ECMAScriptの次世代機能を使えるようにする
 - ブラウザは対象とする環境の１つでしかない
 
+--- 
+
+babelを使っているpackage.jsonの例
+
+```
+"dependencies": {
+  "babel-core": "^6.25.0",
+  "babel-loader": "7.x",
+  "babel-plugin-syntax-dynamic-import": "^6.18.0",
+  "babel-plugin-transform-class-properties": "^6.24.1",
+  "babel-polyfill": "^6.23.0",
+  "babel-preset-env": "^1.6.0",
+  "babel-preset-stage-1": "^6.24.1",
+  ...
+```
+
+---
+
+babel多くね...?
+
 ---
 
 ポイント
