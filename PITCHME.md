@@ -256,7 +256,7 @@ babel script.js --presets=stage-2
 
 ---
 
-「stage-3のObjectRestSpreadが使いたい」
+「stage-3のObjectRestSpreadが使いたい」  
 「けど、stage-3全部入れるのはな〜」
 
 → `babel-plugin-transform-object-rest-spread`
@@ -324,7 +324,7 @@ _.partition([1, 2, 3, 4], n => n % 2);
 
 `application.js` だけを見てみると
 
-```
+```js
 var hoge = _.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 });
 ```
 
@@ -337,7 +337,7 @@ var hoge = _.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 });
 node.jsの場合
 
 
-```
+```js
 var _ = require('lodash');
 var hoge = _.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 });
 ```
@@ -357,6 +357,53 @@ var hoge = _.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 });
 `require`(CommonJS)での依存を解決  
 ↓  
 ブラウザで実行可能なファイルとして出力する
+
+---
+
+application.js
+
+```js
+var _ = require('lodash');
+var hoge = _.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 });
+```
+
+html
+
+```html
+<script src="application.js"></script>
+```
+
+---
+
+## webpackの基本
+
+---
+
+### 設定ファイル
+
+---
+
+#### webpack.config.js
+
+実行時に存在していると自動的にロードされる。
+
+```
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
+```
+
+---
+
+ここからの話  
+↓  
+webpack.config.js の設定について
 
 ---
 
