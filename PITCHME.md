@@ -500,6 +500,8 @@ module.exports = {
 
 ---
 
+#### babel-loader
+
 ```js
 module: {
   rules: [
@@ -517,7 +519,50 @@ babelによる変換が行われる
 
 --- 
 
+loaderはたくさんある
+
+---
+
+#### css-loader
+
+javascriptからcssを読み込めるようになる
+
+```js
+import css from 'file.css';
+```
+
+---
+
+#### coffee-loader
+
+CoffeeScriptを変換する
+
+---
+
+#### vue-loader
+
+Vueの単一ファイルコンポーネントを変換する
+
+```vue
+<template>
+<div>
+  {{text}}
+</div>
+</template>
+<script>
+export default {
+  name: 'Sample’,
+  props: ['text']
+}
+</script>
+```
+
+---
+
 ### plugin
+
+最終的な
+
 
 ---
 
