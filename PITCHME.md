@@ -485,7 +485,8 @@ module.exports = {
   }
 }
 ```
-
+@[7]([name]の部分にentryのkeyが入る)
+@[3-4](`app.js`/`search.js`が出力される)
 
 ---
 
