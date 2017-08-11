@@ -84,7 +84,54 @@ Javascript
 
 ---
 
+ポイント : コア機能とその他が分離
 
+---
+
+オフィシャルページ  
+`Ready to get started?` より引用
+
+```
+npm install --save-dev babel-cli babel-preset-env
+```
+
+---
+
+
+
+---
+
+### preset
+
+
+---
+
+
+
+
+
+---
+
+# webpack
+
+---
+
+
+### entry
+
+---
+
+### output
+
+---
+
+### loader
+
+--- 
+
+### plugin
+
+---
 
 ---
 
