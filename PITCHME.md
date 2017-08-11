@@ -409,6 +409,23 @@ webpack.config.js の設定について
 
 ### entry
 
+webpackビルドの起点となるファイル
+
+---
+
+```
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
+```
+@[4](→ './src/index.js' を起点としてビルドする)
+
 ---
 
 ### output
