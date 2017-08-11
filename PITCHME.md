@@ -519,7 +519,7 @@ babelによる変換が行われる
 
 --- 
 
-loaderはたくさんある
+その他loaderの例
 
 ---
 
@@ -559,13 +559,74 @@ export default {
 
 ---
 
+やりたいことに応じたloaderを選んで使っていけばok
+
+---
+
 ### plugin
 
-最終的な
-
-
----
+最終的な生成物に対して何らかの処理を行う
 
 ---
 
-bbb
+例 : minify(ファイル圧縮)したい！
+
+---
+
+### UglifyJsPlugin
+
+```
+const webpack = require('webpack');
+
+module.exports = {
+  /*
+    entryとかoutputの設定とか
+    ...
+  */
+
+  plugins:[
+    new webpack.optimize.UglifyJsPlugin()
+  ]
+};
+```
+@[9-11](最終的な生成物が`UglifyJS`によって圧縮される)
+
+---
+
+その他pluginの例
+
+---
+
+### CommonsChunkPlugin
+
+一部のモジュールだけを別ファイル化できる。  
+Reactなどの共通モジュールだけで1ファイルとすることができる。
+
+- 各outputファイルの軽量化
+- キャッシュの効率化
+
+---
+
+### EnvironmentPlugin
+
+`process.env.NODE_ENV` などをビルド時点で置き換えてくれる。  
+
+- `development`向けにビルドされた場合のみデバッグログを出力したり
+
+---
+
+基本的なものはwebpackのドキュメントに載ってる
+
+https://webpack.js.org/plugins/
+
+---
+
+ちなみに、loaderもpluginも作ろうと思えば作れる
+
+> (私はまだ作ったこと無い...)
+
+---
+
+
+
+----
