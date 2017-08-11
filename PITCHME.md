@@ -138,6 +138,8 @@ CLIからbabelによる変換を行うときに使う。
 babel script.js --out-file script-compiled.js
 ```
 
+---
+
 ### babel-register
 
 node.jsの `require` に時にフックして変換を行う。
@@ -147,6 +149,8 @@ require("babel-register");
 
 # → .es6, .es, .jsx, .js をrequireすると変換される
 ```
+
+---
 
 ### babel-loader
 
@@ -201,6 +205,7 @@ babelでどこまでのものを変換したいのか？
 
 ### Presets
 
+変換ルールをひとまとめにしたもの。  
 Presetsを使いたいstageに応じて選んで使う。
 
 - babel-preset-stage-0
@@ -208,6 +213,7 @@ Presetsを使いたいstageに応じて選んで使う。
 - babel-preset-stage-2
 - babel-preset-stage-3
 - babel-preset-env
+- など
 
 ```
 babel script.js --presets=stage-2
@@ -215,33 +221,49 @@ babel script.js --presets=stage-2
 
 ---
 
-### Transform Plugins
+特殊な変換用Presetsも存在する。
 
-
+- babel-preset-react
+- babel-preset-flow
+- など
 
 ---
 
-オフィシャルページ  
-`Ready to get started?` より引用
+### Plugins
+
+- 変換ルールを個別に適用するためのもの
+- babel-preset-stage-x はこれの集合体
+
+---
+
+「stage-3のObjectRestSpreadが使いたい」
+「けど、stage-3全部入れるのはな〜」
+
+→ `babel-plugin-transform-object-rest-spread`
+
+---
+
+## 設定ファイル
+
+---
+
+
+`.babelrc`
+
+---
+
+変換時に `.babelrc` というファイルがあると自動的にロードされる。  
+PresetsやPluginsの設定はここに書くことが多い。
 
 ```
-npm install --save-dev babel-cli babel-preset-env
+{
+  "plugins": ["transform-react-jsx"],
+  "ignore": [
+    "foo.js",
+    "bar/**/*.js"
+  ]
+}
 ```
-
----
-
-
-
----
-
-### preset
-
-
----
-
-
-
-
 
 ---
 
