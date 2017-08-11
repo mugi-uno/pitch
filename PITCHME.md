@@ -387,7 +387,7 @@ html
 
 実行時に存在していると自動的にロードされる。
 
-```
+```js
 const path = require('path');
 
 module.exports = {
@@ -413,7 +413,7 @@ webpackビルドの起点となるファイル
 
 ---
 
-```
+```js
 const path = require('path');
 
 module.exports = {
@@ -428,7 +428,61 @@ module.exports = {
 
 ---
 
+```js
+entry: {
+  home: "./home.js",
+  about: "./about.js",
+  contact: "./contact.js"
+}
+```
+複数指定することもできる
+
+---
+
+entry1ファイル = 1ファイル出力される
+
+---
+
 ### output
+
+entryのファイルを出力する際に、  
+どういった形式で出力するかを指定する。
+
+---
+
+```js
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
+```
+@[5-8]
+@[6](→ `bundle.js`という名前で)
+@[7](→ `dist`配下に出力)
+
+
+---
+
+複数ファイル出力のケース
+
+```js
+{
+  entry: {
+    app: './src/app.js',
+    search: './src/search.js'
+  },
+  output: {
+    filename: '[name].js',
+    path: __dirname + '/dist'
+  }
+}
+```
+
 
 ---
 
